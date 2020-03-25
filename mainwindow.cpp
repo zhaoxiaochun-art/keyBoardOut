@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-connect(ui->pushButton_8,SIGNAL(clicked()),this,SLOT(MoveOut()));
+    connect(ui->pushButton_8,SIGNAL(clicked()),this,SLOT(MoveOut()));
 
 }
 
@@ -15,117 +15,124 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
- void MainWindow::MoveOut()
- {
+void MainWindow::MoveOut()
+{
+    int i=39;//first x
+    int x=620;// last x
+    int y=40;
+    int j=83;//增量
     if(ui->pushButton_8->text()=="<<")
-     {int i=27;
-     QPropertyAnimation *animation = new QPropertyAnimation(ui->pushButton,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
+    {
+        QPropertyAnimation *animation = new QPropertyAnimation(ui->pushButton,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-     i+=83;
-     animation = new QPropertyAnimation(ui->pushButton_2,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_2,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-     i+=83;
-     animation = new QPropertyAnimation(ui->pushButton_3,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_3,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-     i+=83;
-     animation = new QPropertyAnimation(ui->pushButton_4,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
-     i+=83;
-     animation = new QPropertyAnimation(ui->pushButton_5,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
-     i+=83;
-     animation = new QPropertyAnimation(ui->pushButton_6,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
-     i+=83;
-     animation = new QPropertyAnimation(ui->pushButton_7,"pos");
-     animation->setDuration(1000);
-     animation->setStartValue(QPoint(608,113));
-     animation->setEndValue(QPoint(i,113));
-     animation->setEasingCurve(QEasingCurve::InOutBack);
-     animation->start(QAbstractAnimation::DeleteWhenStopped);
-    ui->pushButton_8->setText(">>");}
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_4,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_5,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_6,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_7,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(x,y));
+        animation->setEndValue(QPoint(i,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+
+        ui->widget_Keyboard->setAutoFillBackground(true);//以防看不清
+        ui->pushButton_8->setText(">>");}
     else
     {
-        int i=27;
-    QPropertyAnimation *animation = new QPropertyAnimation(ui->pushButton,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
+       ui->widget_Keyboard->setAutoFillBackground(false);//以防看不清
 
-    i+=83;
-    animation = new QPropertyAnimation(ui->pushButton_2,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
+        QPropertyAnimation *animation = new QPropertyAnimation(ui->pushButton,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-    i+=83;
-    animation = new QPropertyAnimation(ui->pushButton_3,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_2,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-    i+=83;
-    animation = new QPropertyAnimation(ui->pushButton_4,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
-    i+=83;
-    animation = new QPropertyAnimation(ui->pushButton_5,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
-    i+=83;
-    animation = new QPropertyAnimation(ui->pushButton_6,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
-    i+=83;
-    animation = new QPropertyAnimation(ui->pushButton_7,"pos");
-    animation->setDuration(1000);
-    animation->setStartValue(QPoint(i,113));
-    animation->setEndValue(QPoint(608,113));
-    animation->setEasingCurve(QEasingCurve::InOutBack);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_3,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-    ui->pushButton_8->setText("<<");
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_4,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_5,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_6,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+        i+=j;
+        animation = new QPropertyAnimation(ui->pushButton_7,"pos");
+        animation->setDuration(1000);
+        animation->setStartValue(QPoint(i,y));
+        animation->setEndValue(QPoint(x,y));
+        animation->setEasingCurve(QEasingCurve::InOutBack);
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+
+        ui->pushButton_8->setText("<<");
     }
- }
+}
